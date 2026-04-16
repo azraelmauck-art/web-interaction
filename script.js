@@ -1,27 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
   const gallery = document.getElementById("gallery");
   const box = document.querySelector(".box");
-  const button = document.getElementById("themeToggle");
   const toggleButton = document.getElementById("toggleImage");
  
-button.addEventListener("click", () => {
-  darkMode = !darkMode; // flip between true/false
-  document.body.classList.toggle("dark", darkMode);
- 
-  if (darkMode) {
-    button.textContent = "Click for Light Mode!";
-  } else {
-    button.textContent = "Click for Dark Mode!";
-  }
- 
-if (darkMode) {
-  document.body.style.background = "black";
-  document.body.style.color = "white";
-} else {
-  document.body.style.background = "white";
-  document.body.style.color = "black";
+let darkMode = localStorage.getItem("darkMode");
+
+if (darkMode == "true") {
+  addDarkMode();
 }
-  });
+document.querySelector(".switch").addEventListener("click", function () {
+  darkMode = localStorage.getItem("darkMode");
+  if (darkMode == "true") {
+    removeDarkMode();
+  } else {
+    addDarkMode();
+  }
+});
+
+function addDarkMode() {
+  darkMode = localStorage.setItem("darkMode", "true");
+  document.getElementsByTagName("body")[0].classList.add("darkMode");
+}
+
+function removeDarkMode() {
+  darkMode = localStorage.setItem("darkMode", "false");
+  document.getElementsByTagName("body")[0].classList.remove("darkMode");
+}
  
   let toggled = false;
   toggleButton.addEventListener("click", () => {
