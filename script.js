@@ -1,12 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
   const gallery = document.getElementById("gallery");
   const box = document.querySelector(".box");
-  const colorButton = document.getElementById("changeColor");
+  const button = document.getElementById("themeToggle");
   const toggleButton = document.getElementById("toggleImage");
  
-  colorButton.addEventListener("click", () => {
-    box.style.backgroundColor =
-    box.style.backgroundColor === "blue" ? "red" : "blue"; 
+button.addEventListener("click", () => {
+  darkMode = !darkMode; // flip between true/false
+  document.body.classList.toggle("dark", darkMode);
+ 
+  if (darkMode) {
+    button.textContent = "Click for Light Mode!";
+  } else {
+    button.textContent = "Click for Dark Mode!";
+  }
+ 
+if (darkMode) {
+  document.body.style.background = "black";
+  document.body.style.color = "white";
+} else {
+  document.body.style.background = "white";
+  document.body.style.color = "black";
+}
   });
  
   let toggled = false;
