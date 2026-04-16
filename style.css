@@ -5,20 +5,13 @@ body {
   margin: 0;
   padding: 0;
 }
- 
-header {
-  background-color: lightblue;
-  padding: 20px;
+
+.dark-mode {
+  background-color: #413839;
+  color: white;
 }
  
 .content img {
   width: 300px;
   border: 10px dotted red;
-}
- 
-.box {
-  width: 200px;
-  height: 100px;
-  background-color: #AAF0D1;
-  margin: 40px auto;
 }
