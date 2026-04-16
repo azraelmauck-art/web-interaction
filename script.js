@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const gallery = document.getElementById("gallery");
   const box = document.querySelector(".box");
   const toggleButton = document.getElementById("toggleImage");
+  const toggleDarkmode = document.getElementById("toggleDarkmode")
  
   let toggled = false;
   toggleButton.addEventListener("click", () => {
