@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const gallery = document.getElementById("gallery");
   const box = document.querySelector(".box");
-  let image = document.getElementById("image");
   const colorButton = document.getElementById("changeColor");
 
   colorButton.addEventListener("click", () => {
@@ -9,11 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
     box.style.backgroundColor === "lightgreen" ? "brown" : "lightgreen"; 
   });
 
-image.addEventListener('mouseover', function(){
-  image.src = "./assets/images/formosan-ferret-badger.png"
+gallery.addEventListener('mouseover', function(){
+  gallery.src = "./assets/images/formosan-ferret-badger.png"
 })
-image.addEventListener('mouseout', function(){
-    image.src = "./assets/images/marbled-polecat.png"
+gallery.addEventListener('mouseout', function(){
+    gallery.src = "./assets/images/marbled-polecat.png"
   })
 
   console.log("Page loaded!")
